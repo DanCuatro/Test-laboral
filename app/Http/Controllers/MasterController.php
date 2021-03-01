@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Model\Usuario\Area;
 use App\Model\Usuario\Peticion;
+use App\Model\Usuario\Correo;
 use App\User;
 use App\Model\Cuestionario\CategoriaCalificada;
 use App\Model\Cuestionario\DominioCalificado;
@@ -223,5 +224,10 @@ class MasterController extends Controller
         $modelosDeControl = json_decode($request->info, true);
         return view('graficos.livewire.pdf',compact('graficasGuardadas','modelosDeControl'));  
         
+    }
+
+    public function registrar(){
+        $correo=Correo::where('estado',true)->get();
+        return view("auth.register",compact('correo'));
     }
 }

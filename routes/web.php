@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
+Route::post('registrar','MasterController@registrar')->name('registrar');
+
 Route::middleware('auth')->middleware('verified')->group(function(){
 	//roles
 	Route::post('roles/store','RoleController@store')->name('roles.store');
@@ -63,4 +65,6 @@ Route::middleware('auth')->middleware('verified')->group(function(){
 	Route::get('graficos','MasterController@GraficosIndex')->name('graficos.index');
 
 	Route::post('graficos/pdf','MasterController@pdfGrafico')->name('graficos.pdf');
+	
+	
 });
