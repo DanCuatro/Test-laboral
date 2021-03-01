@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
-Route::post('registrar','MasterController@registrar')->name('registrar');
+Route::get('registrar','MasterController@registrar')->name('registrar');
 
 Route::middleware('auth')->middleware('verified')->group(function(){
 	//roles
