@@ -14,8 +14,7 @@ class UserSeeder extends Seeder
         	'special' 	=> 'all-access',
         ]);
         
-        factory(App\User::class,300)->create();
-
+        
         App\User::create([
             'name' => 'Daniel',
             'email' => 'alucard11096@gmail.com',
