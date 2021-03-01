@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\Laravel\New testlaboral\resources\views/areas/livewire/default.blade.php ENDPATH**/ ?>

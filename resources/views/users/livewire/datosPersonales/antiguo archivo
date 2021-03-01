@@ -1,0 +1,163 @@
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-8">
+			<div class="card">
+                <div class="card-header">
+                	Datos complementarios
+                </div>
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Nombre</label>
+
+                        <div class="col-md-6">
+                            <input wire:model="nombre" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Apellido Paterno</label>
+
+                        <div class="col-md-6">
+                            <input wire:model="apPaterno" type="text" name="apellidoPaterno" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Apellido Materno</label>
+
+                        <div class="col-md-6">
+                            <input wire:model="apMaterno" type="text" name="apellidoMaterno" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Genero</label>
+                            
+                        <div class="col-md-6">
+                            <select wire:model="genereo" class="form-control">
+                            <option> </option>
+                            @foreach ($cat_genero as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Fecha de Nacimiento</label>
+
+                        <div class="col-md-6">
+                            <input wire:model="fechaNacimiento" type="date" id="start" name="trip-start" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Estado Civil</label>
+
+                        <div class="col-md-6">
+                            <select wire:model="estadoCivil" class="form-control">
+                                <option> </option>
+                                @foreach ($cat_estados_civil as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Nivel de Estudios</label>
+
+                        
+                        <div class="col-md-6">
+                            <select wire:model="nivelEstudio" class="form-control">
+                                <option> </option>
+                                @foreach ($cat_nivel_estudio as $item)
+                                <option  value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Experiencia Laboral</label>
+
+                        <div class="col-md-6">
+                            <input wire:model="exp_laboral" type="date" id="start" name="trip-start" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Áarea(s)</label>
+
+                        <div class="col-md-6"> 
+                            <form>
+                                @foreach ($areas as $area)
+                                    <div class="form-check form-check-inline">
+                                        <input wire:click="SelecionarAreaB({{$area->id}},'{{$area->name}}')" class="form-check-input" type="checkbox" id="inlineCheckbox{{$area->id}}" value="{{$area->id}}"
+                                        @if( ($areasSeleccionadas!=null) && ( count($areasSeleccionadas)===2 ) && ( ($area->id != $areasSeleccionadas[0][0]) && ($area->id != $areasSeleccionadas[1][0]) ) )
+                                            disabled
+                                        @endif
+                                        >
+                                        <label class="form-check-label" >{{$area->name}}</label>
+                                    </div>
+                                @endforeach
+                            </form>
+                        </div>
+                    </div>
+
+                    @if($areasSeleccionadas!=null)
+                        @foreach ($areasSeleccionadas as $areaSeleccionada)
+                                <hr>    
+                                <h3 class="text-center">{{$areaSeleccionada[1]}}</h3>
+                                <hr>   
+                                <div class="form-group">
+                                    <h5 class="text-center">Seleccione (el/los) puestos que desempeña.</h5>
+                                    
+                                    <div class=" offset-md-4 col-md-6"> 
+                                        @foreach ($areaSeleccionada[2] as $puesto)
+                                            <div class="form-check form-check-inline">
+                                                <input wire:click="SelecionarPuestoB({{$puesto[0]}})" class="form-check-input" type="checkbox" id="inlineCheckboxPuestos1{{$puesto[0]}}" value="{{$puesto[0]}}">
+                                                <label class="form-check-label" >{{$puesto[1]}}</label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @foreach ($areaSeleccionada[2] as $puesto)
+                                    @if($puesto[2])
+                                    <div class="form-group row">
+                                        <label class="col-md-4 col-form-label text-md-right">Fecha de ingreso a: <strong>{{$puesto[1]}}</strong></label>
+                
+                                        <div class="col-md-6">
+                                            <input 
+                                            @if($puesto[3]==1)
+                                                wire:model="fechaPuesto1" 
+                                            @else @if($puesto[3]==2)
+                                                wire:model="fechaPuesto2"
+                                                @endif
+                                            @endif
+                                             type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    @endif
+                                @endforeach
+                                <br>
+                        @endforeach
+                    @endif
+                    <button wire:click="Guardar" class="offset-md-8  btn btn-primary ">Guardar</button>
+                    <br>
+                    <button wire:click="imprimir">Nop</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

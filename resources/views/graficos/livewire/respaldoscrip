@@ -1,0 +1,58 @@
+<script type="text/javascript" >
+    window.livewire.on('Recargar',CargarGrafica)
+    
+    function CargarGrafica(hola) {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        
+        console.log( {
+        type: 'bar',
+        data: {
+            labels: ['Nulo' ,'Muy alto' ,'Alto' ,'Medio' ,'Bajo' ],
+            datasets: [{
+                label: 'Servicio Escolares',
+                data: [1,2,3,4,5],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(80, 200, 90, 0.2)',
+                    'rgba(255,227, 0, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(80, 200, 90, 1)',
+                    'rgba(255, 227, 0, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {scales: {yAxes: [{ticks: {beginAtZero: true}}]}}});
+        var myChart = new Chart(document.getElementById('myChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Nulo' ,'Muy alto' ,'Alto' ,'Medio' ,'Bajo' ],
+            datasets: [{
+                label: 'Servicio Escolares',
+                data: [1,2,3,4,5],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(80, 200, 90, 0.2)',
+                    'rgba(255,227, 0, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(80, 200, 90, 1)',
+                    'rgba(255, 227, 0, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {scales: {yAxes: [{ticks: {beginAtZero: true}}]}}});
+    }   
+</script>
