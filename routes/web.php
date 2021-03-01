@@ -20,7 +20,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
-Route::get('registrar','MasterController@registrar')->name('registrar');
+Route::get('registrar',function () {
+    $correo=App\Model\Usuario\Correo::where('estado',true)->get();
+	return view("auth.register",compact('correo'));
+})->name('registrar');
 
 Route::middleware('auth')->middleware('verified')->group(function(){
 	//roles
