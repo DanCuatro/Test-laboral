@@ -105,10 +105,12 @@ class UsuariosComponent extends Component
     }
     public function permisos(){
         if(Gate::check('users.index')){
-            return $this->Buscador(User::where('email_verified_at','!=',null));
+            //return $this->Buscador(User::where('email_verified_at','!=',null));
+            return $this->Buscador(User::all());
         }else{
             $areas=Area::all();
-            $usuarios=User::where('email_verified_at','asdasdasdasd');
+            //$usuarios=User::where('email_verified_at','asdasdasdasd');
+            $usuarios=User::all();
             $this->arrayAreasPermitidas=array();
             for($i=0;$i<count($areas);$i++){
                 $stringPermiso=$areas[$i]->name.'.users.index';
