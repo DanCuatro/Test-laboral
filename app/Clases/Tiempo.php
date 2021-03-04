@@ -17,7 +17,7 @@ class Tiempo
         $fecha = new Carbon($fecha);
         $Periodo1 = Carbon::create($fecha->format('Y'),6,30,0,0,0, 'America/Mexico_City');
         if($fecha <= $Periodo1)
-            return Carbon::create($fecha->format('Y'),1,0,0,0,0, 'America/Mexico_City');
+            return Carbon::create($fecha->format('Y'),1,1,0,0,0, 'America/Mexico_City');
         else
             return Carbon::create($fecha->format('Y'),7,1,0,0,0, 'America/Mexico_City');
     }

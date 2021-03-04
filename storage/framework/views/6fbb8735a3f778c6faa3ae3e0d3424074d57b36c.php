@@ -4,7 +4,7 @@
         <select wire:model="idPeriodo" class="form-control">
             <option>--Selecionar--</option>
             <?php $__currentLoopData = $listaPeriodos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $periodo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <option value="<?php echo e($periodo->id); ?>"><?php echo e($periodo->periodo); ?></option>
+                <option value="<?php echo e($periodo->id); ?>"><?php echo e($periodo->periodoString); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>
     </div>

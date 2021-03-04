@@ -13,6 +13,7 @@ class CreatePeriodosTable extends Migration
             $table->id();
             $table->foreignId('cuestionario_id')->nullable()->references('id')->on('cuestionarios')->onDelete('cascade')->onUpdate('cascade');
             $table->date('periodo');
+            $table->string('periodoString');
             $table->date('fecha_inicio')->nullable();
             $table->date('fecha_cierre')->nullable();
             $table->timestamps();

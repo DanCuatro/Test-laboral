@@ -34,12 +34,14 @@ class CuestionarioAsignadoComponent extends Component
         $this->periodoData      =$tiempo->Periodo($this->fecha);
         $this->periodoString=$tiempo->PeriodoString($this->fecha);
         $this->Limite=$tiempo->Periodo($this->fecha)->addMonth(6)->subDay();
-        
         $periodo=Periodo::where('periodo','=',$this->periodoData->format('Y-m-d'))->first();
         
         if($periodo==null){
             $cuestionario=Cuestionario::where('nombre','NOM-035')->where('estado',true)->first();
-            $periodo= Periodo::create(['periodo' => $this->periodoData]);
+            $periodo= Periodo::create([
+                'periodo' => $this->periodoData,
+                'periodoString'=>$this->periodoString
+            ]);
             $cuestionario->periodo()->save($periodo); 
             $this->cuestionario_id = $periodo->id;
         }else{
@@ -64,7 +66,7 @@ class CuestionarioAsignadoComponent extends Component
             $this->colorAlerta="alert-info";
             $this->errorFecha="fechas Asignadas";
             //enviar notificaciones de asignacion 
-            Mail::to('alucard11096@gmail.com')->send(new Message($fechasAsignacion,$this->periodoString));
+            //Mail::to('alucard11096@gmail.com')->send(new Message($fechasAsignacion,$this->periodoString));
         }else{
             $this->colorAlerta="alert-danger";
             $this->errorFecha="La fecha Inicial tiene que ser MENOR que la Final";

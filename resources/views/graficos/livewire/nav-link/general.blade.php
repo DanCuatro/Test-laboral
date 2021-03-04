@@ -4,7 +4,7 @@
         <select wire:model="idPeriodo" class="form-control">
             <option>--Selecionar--</option>
             @foreach ($listaPeriodos as $periodo)
-                <option value="{{$periodo->id}}">{{$periodo->periodo}}</option>
+                <option value="{{$periodo->id}}">{{$periodo->periodoString}}</option>
             @endforeach
         </select>
     </div>

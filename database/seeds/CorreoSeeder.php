@@ -13,10 +13,6 @@ class CorreoSeeder extends Seeder
     public function run()
     {
         Correo::create([
-            'name' => 'gmail.com',
-            'estado' => true
-        ]);
-        Correo::create([
             'name' => 'itsx.edu.mx',
             'estado' => true
         ]);

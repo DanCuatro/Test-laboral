@@ -73,7 +73,7 @@
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 
                         <?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Registro</a>
+                            <a href="<?php echo e(route('registrar')); ?>">Registro</a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

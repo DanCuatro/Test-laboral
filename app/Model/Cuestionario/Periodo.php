@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Periodo extends Model{   
     protected $fillable = [
-        'periodo','fecha_inicio','fecha_cierre'
+        'periodo','periodoString','fecha_inicio','fecha_cierre'
     ];
 
     //belongsToMany
