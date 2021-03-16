@@ -11,7 +11,7 @@
 						<div class="col-lg-2">
 							@can('areas.create')
 								<button wire:click='create' class="form-control btn btn-sm btn-primary float-right">
-									Crear Area
+									Crear Área
 								</button>
 							@endcan
 						</div>

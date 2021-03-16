@@ -9,7 +9,7 @@
                 	Roles
                 	@can('roles.create')
                 	<a href="{{ route('roles.create')}}" class="btn btn-sm btn-primary float-right">
-                		Crear Area
+                		Crear Rol
                 	</a>
 					@endcan
 				</div>

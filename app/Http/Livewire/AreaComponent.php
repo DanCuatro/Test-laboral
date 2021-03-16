@@ -233,28 +233,28 @@ class AreaComponent extends Component
 
     public function actulizarPermisos($area,$nuevo){
         //Empleados
-        Permission::where('slug',$area.'.users.index')->update(['name' => 'Navegar Empleados de '.$area,'slug' => $nuevo.'.users.index']);
-        Permission::where('slug',$area.'.users.show')->update(['name' => 'Ver los detalles de los Empleados de '.$area,'slug' => $nuevo.'.users.show']);
-        Permission::where('slug',$area.'.users.edit')->update(['name' => 'Edicion de los Empleados de '.$area,'slug' => $nuevo.'.users.edit']);
-        Permission::where('slug',$area.'.users.editCom')->update(['name' => 'Complemento de Datos de Emepleados de'.$area,'slug' => $nuevo.'.users.editCom']);
-        Permission::where('slug',$area.'.users.destroy')->update(['name' => 'Dar de baja Empleados de '.$area,'slug' => $nuevo.'.users.destroy']);
+        Permission::where('slug',$area.'.users.index')->update(['name' => 'Navegar Empleados de '.$nuevo,'slug' => $nuevo.'.users.index']);
+        Permission::where('slug',$area.'.users.show')->update(['name' => 'Ver los detalles de los Empleados de '.$nuevo,'slug' => $nuevo.'.users.show']);
+        Permission::where('slug',$area.'.users.edit')->update(['name' => 'Edición de los Empleados de '.$nuevo,'slug' => $nuevo.'.users.edit']);
+        Permission::where('slug',$area.'.users.editCom')->update(['name' => 'Complemento de Datos de Empleados de'.$nuevo,'slug' => $nuevo.'.users.editCom']);
+        Permission::where('slug',$area.'.users.destroy')->update(['name' => 'Dar de baja Empleados de '.$nuevo,'slug' => $nuevo.'.users.destroy']);
         //Area
-        Permission::where('slug',$area.'.areas.index')->update(['name' => 'Navegar el Area de'.$area,'slug' => $nuevo.'.areas.index']);
-        Permission::where('slug',$area.'.areas.show')->update(['name' => 'Ver detalles de '.$area,'slug' => $nuevo.'.areas.show']);
-        Permission::where('slug',$area.'.areas.edit')->update(['name' => 'Edicion de '.$area,'slug' => $nuevo.'.areas.edit']);
+        Permission::where('slug',$area.'.areas.index')->update(['name' => 'Navegar el Área de'.$nuevo,'slug' => $nuevo.'.areas.index','description' => 'Lista de navegación de'.$nuevo.' permite el acceso a este apartado']);
+        Permission::where('slug',$area.'.areas.show')->update(['name' => 'Ver detalles de '.$nuevo,'slug' => $nuevo.'.areas.show','description' => 'Ver detalles de'.$nuevo]);
+        Permission::where('slug',$area.'.areas.edit')->update(['name' => 'Edición de '.$nuevo,'slug' => $nuevo.'.areas.edit','description' => 'Modificar los datos de '.$nuevo]);
     }
 
     public function crearPermisos($area){
         //Empleados
-        Permission::create(['name' => 'Navegar Empleados de '.$area,'slug' => $area.'.users.index','description' => 'Lista de navegacion de Empleados',]);
-        Permission::create(['name' => 'Ver los detalles de los Empleados de '.$area,'slug' => $area.'.users.show','description' => 'Ver en detalle de los Empleados tanto en el area de Empleados como en el de Graficas',]);
-        Permission::create(['name' => 'Edicion de los Empleados de '.$area,'slug' => $area.'.users.edit','description' => 'Modificar los datos de un Empleados',]);
-        Permission::create(['name' => 'Complemento de Datos de Emepleados de'.$area,'slug' => $area.'.users.editCom','description' => 'Complementar los daltos Faltantes de un Empleado',]);
-        Permission::create(['name' => 'Dar de baja Empleados de '.$area,'slug' => $area.'.users.destroy','description' => 'Dar de baja Empleados',]);
+        Permission::create(['name' => 'Navegar Empleados de '.$area,'slug' => $area.'.users.index','description' => 'Lista de navegación de Empleados',]);
+        Permission::create(['name' => 'Ver los detalles de los Empleados de '.$area,'slug' => $area.'.users.show','description' => 'Ver los datos personales e informacion los Empleados']);
+        Permission::create(['name' => 'Edición de los Empleados de '.$area,'slug' => $area.'.users.edit','description' => 'Modificar los datos de un Empleados']);
+        Permission::create(['name' => 'Complemento de Datos de Empleados de'.$area,'slug' => $area.'.users.editCom','description' => 'Complementar los datos Faltantes de un Empleado']);
+        Permission::create(['name' => 'Dar de baja Empleados de '.$area,'slug' => $area.'.users.destroy','description' => 'Dar de baja Empleados']);
         //Area
-        Permission::create(['name' => 'Navegar el Area de'.$area,'slug' => $area.'.areas.index','description' => 'Lista de navegacion de'.$area.' (permite el acceso a este apartado)',]);
-        Permission::create(['name' => 'Ver detalles de '.$area,'slug' => $area.'.areas.show','description' => 'Ver detalles de'.$area,]);
-        Permission::create(['name' => 'Edicion de '.$area,'slug' => $area.'.areas.edit','description' => 'Modificar los datos de '.$area,]);
+        Permission::create(['name' => 'Navegar el Área de'.$area,'slug' => $area.'.areas.index','description' => 'Lista de navegación de'.$area.' permite el acceso a este apartado',]);
+        Permission::create(['name' => 'Ver detalles de '.$area,'slug' => $area.'.areas.show','description' => 'Ver detalles de'.$area]);
+        Permission::create(['name' => 'Edicion de '.$area,'slug' => $area.'.areas.edit','description' => 'Modificar los datos de '.$area]);
     }
 
     public function defaultView(){

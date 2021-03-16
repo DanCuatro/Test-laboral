@@ -52,10 +52,10 @@
                             <div class="dropdown-divider"></div>
                             <div class="nav-link"><b> Cuestionario</b></div>
     @can('cuestionario.asing')<a class="nav-link" href="{{ route('cuestionario.asignar') }}">Asignar</a>@endcan
-    @can('graficos.index')    <a class="nav-link" href="{{ route('graficos.index') }}">Graficos</a>     @endcan
+    @can('graficos.index')    <a class="nav-link" href="{{ route('graficos.index') }}">Gráficos</a>     @endcan
                             <div class="dropdown-divider"></div>
-                            <div class="nav-link"><b> Catalogos</b></div>
-    @if($pemisoArea)          <a class="nav-link" href="{{ route('areas.index') }}">Areas</a>           @endif
+                            <div class="nav-link"><b> Catálogos</b></div>
+    @if($pemisoArea)          <a class="nav-link" href="{{ route('areas.index') }}">Áreas</a>           @endif
     @can('correos.index')     <a class="nav-link" href="{{ route('correos.index') }}">Correos</a>       @endcan
     @can('campus.index')      <a class="nav-link" href="{{ route('campus.index') }}">Campus</a>         @endcan
                             </div>
@@ -124,7 +124,7 @@
             @endif
 
             @yield('content')
-            
+            <br><br><br><br>
         </main>
     </div>
     <footer class="footer">
