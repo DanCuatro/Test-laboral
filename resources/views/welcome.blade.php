@@ -61,6 +61,19 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            * {
+            margin: 0;
+            }
+            html, body {
+            height: 100%;
+            }
+            .wrapper {
+            min-height: calc(100% - 4rem);
+            }
+            .footer {
+            height: 4rem;
+            background-color: #ffffff
+            }
         </style>
     </head>
     <body>
@@ -80,12 +93,19 @@
             @endif
 
             <div class="content">
+                <br><br><br><br><br><br><br><br>
                 <div class="title m-b-md">
                     Test Laboral
                 </div>
 
                 <div class="links">
                    ITSX
+                </div>
+                <br><br><br><br><br><br><br><br><br>
+                <div>
+                    <footer class="footer">
+                        <img src="{{ asset('images/logo.png') }}" width="100%" height="100%">
+                    </footer>
                 </div>
                 
             </div>

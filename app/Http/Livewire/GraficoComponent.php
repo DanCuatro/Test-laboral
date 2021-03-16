@@ -132,11 +132,11 @@ class GraficoComponent extends Component
         $this->modelosDeControl=array(
             array('name' => 'Completo','modelos' => null,'whereHas' => null),
             array('name' => 'Área','modelos' => Area::all(),'whereHas' => 'datosPersonales.userPuesto.puesto.area'),
-            array('name' => 'Genero','modelos' => Cat_genero::all(),'whereHas' => 'datosPersonales.cat_genero'),
+            array('name' => 'Género','modelos' => Cat_genero::all(),'whereHas' => 'datosPersonales.cat_genero'),
             array('name' => 'Estado Civil','modelos' => Cat_estados_civil::all(),'whereHas' => 'datosPersonales.cat_estados_civil'),
-            array('name' => 'Jornada de Travajo','modelos' => Cat_jornada_trabajo::all(),'whereHas' => 'datosPersonales.cat_jornada_trabajo'),
+            array('name' => 'Jornada de Trabajo','modelos' => Cat_jornada_trabajo::all(),'whereHas' => 'datosPersonales.cat_jornada_trabajo'),
             array('name' => 'Nivel de Estudio','modelos' => Cat_nivel_estudio::all(),'whereHas' => 'datosPersonales.cat_nivel_estudio'),
-            array('name' => 'Tipo de Contratacion','modelos' => Cat_tipos_contratacion::all(),'whereHas' => 'datosPersonales.cat_tipos_contratacion'),
+            array('name' => 'Tipo de Contratación','modelos' => Cat_tipos_contratacion::all(),'whereHas' => 'datosPersonales.cat_tipos_contratacion'),
             array('name' => 'Tipo de Personal','modelos' => Cat_tipos_personal::all(),'whereHas' => 'datosPersonales.cat_tipos_personal'),
             array('name' => 'Campus','modelos' => Campu::all(),'whereHas' => 'datosPersonales.campu'),
         );

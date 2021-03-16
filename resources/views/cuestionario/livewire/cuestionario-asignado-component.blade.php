@@ -7,7 +7,7 @@
       <div class="card-body">
          
       <div class="form-group row">
-         <label for="name" class="col-md-4 col-form-label text-md-right">Fecha de inicio</label>
+         <label for="name" class="col-md-4 col-form-label text-md-right">Fecha de inició</label>
 
          <div class="col-md-6">
                <input class="form-control" type="date" min="{{ $fecha->format('Y-m-d')}}" max="{{ $Limite->format('Y-m-d')}}" wire:model="fechaInicio" {{$habilidad}}>

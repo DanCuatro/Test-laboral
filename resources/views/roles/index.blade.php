@@ -12,7 +12,6 @@
                 		Crear Area
                 	</a>
 					@endcan
-					<p>Cambir el Metodo para Envir mns al email</p>
 				</div>
 
                 <div class="card-body">

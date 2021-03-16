@@ -12,7 +12,7 @@
                 <div class="card-body">
                    <p><strong>Nombre: </strong>{{ $role->name}}</p>
                    <p><strong>Slug: </strong>{{ $role->slug}}</p>
-                   <p><strong>Descripcion: </strong>{{ $role->description}}</p>
+                   <p><strong>Descripción: </strong>{{ $role->description}}</p>
                 </div>
             </div>
         </div>

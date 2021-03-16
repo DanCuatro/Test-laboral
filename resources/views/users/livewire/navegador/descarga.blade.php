@@ -8,7 +8,7 @@
         <style>
             /*asdasd*/
             @page {
-                margin: 0cm 0cm;
+                margin: 1cm 0cm;
             }
             body {
                 margin-top: 2cm;
@@ -146,10 +146,6 @@
         <h1 style="text-align: center;">NOM-035 Periodo</h1>
         <h2 style="text-align: center">Resultados de test laboral individual</h2>
         <h2 style="text-align: center">Instituto tecnológico superior de Xalapa </h2>
-        <header>
-        </header>
-        <footer>
-        </footer>
 
         <hr>
         

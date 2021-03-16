@@ -28,9 +28,9 @@ class PermissionsTableSeeder extends Seeder{
         	'description' => 'Permite complementar los Datos Faltantes de un Empleado, estos datos solo pueden ser dados por la escuela',
 		]);
 		Permission::create([
-        	'name' => 'Rolos de Empleados',
+        	'name' => 'Roles de Empleados',
         	'slug' => 'users.editRol',
-        	'description' => 'Permite Asignar uno o más rolos a los Empleados',
+        	'description' => 'Permite Asignar uno o más roles a los Empleados',
 		]);
         Permission::create([
         	'name' => 'Baja/Alta de Empleados',
@@ -111,7 +111,7 @@ class PermissionsTableSeeder extends Seeder{
         Permission::create([
         	'name' => 'Editar Correo',
         	'slug' => 'correos.edit',
-        	'description' => 'Permite modificar los Correo',
+        	'description' => 'Permite modificar los Correos',
         ]);
         Permission::create([
         	'name' => 'Baja/Alta de Correo',
@@ -155,7 +155,7 @@ class PermissionsTableSeeder extends Seeder{
 		
 		//Graficos
         Permission::create([
-        	'name' => 'Navegar Graficos',
+        	'name' => 'Navegar Gráficos',
         	'slug' => 'graficos.index',
         	'description' => 'Permite visualizar los datos estadísticos de Todas las Áreas',
 		]);

@@ -2,7 +2,7 @@
 <div class="form-group row" id="home">
     <div class="col-md-2">
         <select wire:model="idPeriodo" class="form-control">
-            <option>--Selecionar--</option>
+            <option>--Seleccionar--</option>
             @foreach ($listaPeriodos as $periodo)
                 <option value="{{$periodo->id}}">{{$periodo->periodoString}}</option>
             @endforeach
@@ -18,7 +18,7 @@
     @if($listaCategoria!=null)
     <div class="col-md-2">
         <select wire:model="subAgrupacion" class="form-control">
-            <option>--Selecionar--</option>
+            <option>--Seleccionar--</option>
             @foreach ($listaCategoria as $categoria)
                 
                 <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
@@ -29,7 +29,7 @@
     @if($listaDomonio!=null)
     <div class="col-md-2">
         <select wire:model="subAgrupacion" class="form-control">
-            <option>--Selecionar--</option>
+            <option>--Seleccionar--</option>
             @foreach ($listaDomonio as $dominio)
                 <option value="{{$dominio->id}}">{{$dominio->nombre}}</option>
             @endforeach

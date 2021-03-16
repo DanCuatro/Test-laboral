@@ -11,15 +11,29 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
     @livewireStyles
+    <style>
+       
+        footer {
+                position: fixed; 
+                bottom: 0cm; 
+                left: 0cm; 
+                right: 0cm;
+                height: 2cm;
+
+                /** Estilos extra personales **/
+                background-color: #ffffff;
+                color: white;
+                text-align: center;
+                line-height: 1.5cm;
+            }
+    </style>
 </head>
 <body>
     
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    ITSX
-                </a>
+                ITSX   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,7 +44,7 @@
                         
                         @if($pemisoArea || $pemisoAreaUser || Gate::check('roles.index') || Gate::check('cuestionario.asing') || Gate::check('graficos.index') || Gate::check('correos.index') || Gate::check('campus.index'))
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administrcion</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
                             <div class="dropdown-menu">
                             <div class="nav-link"><b> General</b></div>
     @if($pemisoAreaUser)      <a class="nav-link" href="{{ route('users.index') }}">Empleados</a>       @endif
@@ -113,6 +127,9 @@
             
         </main>
     </div>
+    <footer class="footer">
+        <img src="{{ asset('images/logo.png') }}" width="900px" height="60px">
+    </footer>
     @livewireScripts
     @yield('scrips')
     @stack('scripts')
