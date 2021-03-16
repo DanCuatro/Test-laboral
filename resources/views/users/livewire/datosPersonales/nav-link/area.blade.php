@@ -76,7 +76,7 @@
                 <h5 class="card-title"><b>{{$item['puesto']}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{$item['area']}}</b></h6>
                 <p class="card-text">{{$item['tiempo']}}</p>
-                <a wire:click="DesactivarPuesto({{$item['id']}})" class="btn btn-secondary">Finalizar</a>
+                <a wire:click="DesactivarPuesto({{$item['id']}})" class="btn btn-secondary">Dar de baja</a>
                 </div>
             </div>
         @endforeach

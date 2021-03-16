@@ -8,7 +8,7 @@
                         </div>
                         <div class="col-lg-2">
                             <button wire:click='CambiarView' class="form-control btn btn-sm btn-primary float-right">
-                                @if($viewDatosPersonales=="show")Editar @else Visulizar @endif
+                                @if($viewDatosPersonales=="show")Editar @else Visualizar @endif
                             </button>
 						</div>
 					</div>

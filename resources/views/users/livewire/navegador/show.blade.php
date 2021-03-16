@@ -6,7 +6,7 @@
                     <p><strong>Nombre: </strong>{{$user->apellido_P}} {{$user->apellido_M}} {{$user->name}}</p>
                     <p><strong>Email: </strong>{{ $user->email}}</p>
                     <p><strong>Fecha de Nacimiento: </strong>{{ $user->fecha_nacimiento}}</p>
-                    <p><strong>Genero: </strong>@if($user->cat_genero!=null){{$user->cat_genero->name}}@endif</p>
+                    <p><strong>Género: </strong>@if($user->cat_genero!=null){{$user->cat_genero->name}}@endif</p>
                     <p><strong>Estado Civil: </strong>@if($user->cat_estados_civil!=null){{$user->cat_estados_civil->name}}@endif</p>
                     <p><strong>Nivel de Estudio: </strong>@if($user->cat_nivel_estudio!=null){{$user->cat_nivel_estudio->name}}@endif</p>
                     <p><strong>Tipo de Contratación: </strong>@if($user->cat_tipos_contratacion!=null){{$user->cat_tipos_contratacion->name}}@endif</p>
@@ -18,7 +18,7 @@
             <div class="offset-1 form-group">
                 <ul>
                     @foreach ($puestos as $puesto)
-                        <li><p>Periodo laboran en <strong>{{$puesto['puesto']}}</strong> en el area de <strong>{{$puesto['area']}}</strong>: {{$puesto['expLaboral']->format('y')}} Año(s) con {{$puesto['expLaboral']->format('m')}} Mese(s) y {{$puesto['expLaboral']->format('d')}} Dia(s)</p></li>
+                        <li><p>Período laborado en <strong>{{$puesto['puesto']}}</strong> en el area de <strong>{{$puesto['area']}}</strong>: {{$puesto['expLaboral']->format('y')}} Año(s) con {{$puesto['expLaboral']->format('m')}} Mese(s) y {{$puesto['expLaboral']->format('d')}} Dia(s)</p></li>
                     @endforeach
                 </ul>
             </div>

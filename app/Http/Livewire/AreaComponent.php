@@ -239,7 +239,7 @@ class AreaComponent extends Component
         Permission::where('slug',$area.'.users.editCom')->update(['name' => 'Complemento de Datos de Empleados de'.$nuevo,'slug' => $nuevo.'.users.editCom']);
         Permission::where('slug',$area.'.users.destroy')->update(['name' => 'Dar de baja Empleados de '.$nuevo,'slug' => $nuevo.'.users.destroy']);
         //Area
-        Permission::where('slug',$area.'.areas.index')->update(['name' => 'Navegar el Área de'.$nuevo,'slug' => $nuevo.'.areas.index','description' => 'Lista de navegación de'.$nuevo.' permite el acceso a este apartado']);
+        Permission::where('slug',$area.'.areas.index')->update(['name' => 'Navegar el Área de '.$nuevo,'slug' => $nuevo.'.areas.index','description' => 'Lista de navegación de'.$nuevo.' permite el acceso a este apartado']);
         Permission::where('slug',$area.'.areas.show')->update(['name' => 'Ver detalles de '.$nuevo,'slug' => $nuevo.'.areas.show','description' => 'Ver detalles de'.$nuevo]);
         Permission::where('slug',$area.'.areas.edit')->update(['name' => 'Edición de '.$nuevo,'slug' => $nuevo.'.areas.edit','description' => 'Modificar los datos de '.$nuevo]);
     }
@@ -252,7 +252,7 @@ class AreaComponent extends Component
         Permission::create(['name' => 'Complemento de Datos de Empleados de'.$area,'slug' => $area.'.users.editCom','description' => 'Complementar los datos Faltantes de un Empleado']);
         Permission::create(['name' => 'Dar de baja Empleados de '.$area,'slug' => $area.'.users.destroy','description' => 'Dar de baja Empleados']);
         //Area
-        Permission::create(['name' => 'Navegar el Área de'.$area,'slug' => $area.'.areas.index','description' => 'Lista de navegación de'.$area.' permite el acceso a este apartado',]);
+        Permission::create(['name' => 'Navegar el Área de '.$area,'slug' => $area.'.areas.index','description' => 'Lista de navegación de'.$area.' permite el acceso a este apartado',]);
         Permission::create(['name' => 'Ver detalles de '.$area,'slug' => $area.'.areas.show','description' => 'Ver detalles de'.$area]);
         Permission::create(['name' => 'Edicion de '.$area,'slug' => $area.'.areas.edit','description' => 'Modificar los datos de '.$area]);
     }
